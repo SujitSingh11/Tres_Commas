@@ -12,31 +12,58 @@ namespace Tres_Commas.Login
     {
         public Login()
         {
-
+            InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnSubmit(object sender, RoutedEventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Password;
-            SqlConnection con = new SqlConnection("Data Source=(local);Initial Catalog=tres_comma;Integrated Security=SSPI");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT into Registration (FirstName,LastName,Email,Password,Address) values('" + firstname + "','" + lastname + "','" + email + "','" + password + "','" + address + "')", con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            con.Close();
+            if (txtUsername.Text.Length == 0)
+            {
+                //errormessage.Text = "Enter an email.";
+                txtUsername.Focus();
+            }
+            else
+            {
+                string username = txtUsername.Text;
+                string password = txtPassword.Password;
+                MainWindow main = new MainWindow();
+                SqlConnection con = new SqlConnection("Data Source=SUJIT_PC;Initial Catalog=tres_comma;Integrated Security=True");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE username='" + username + "'  AND password='" + password + "'", con)
+                {
+                    CommandType = CommandType.Text
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter
+                {
+                    SelectCommand = cmd
+                };
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet);
+                if (dataSet.Tables[0].Rows.Count > 0)
+                {
+                    string user = dataSet.Tables[0].Rows[0]["f_name"].ToString() + " " + dataSet.Tables[0].Rows[0]["l_name"].ToString();
+                    //Sending value from one form to another form.
+                    main.Show();
+                    Close();
+                }
+                else
+                {
+                    //errormessage.Text = "Sorry! Please enter existing emailid/password.";
+                }
+                con.Close();
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void btnReset(object sender, RoutedEventArgs e)
         {
             txtUsername.Text = "";
             txtPassword.Password = "";
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void btnRegister(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            main.Show();
+            Signup signup = new Signup();
+            signup.Show();
             Close();
         }
     }

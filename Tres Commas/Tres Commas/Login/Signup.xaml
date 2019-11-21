@@ -1,12 +1,11 @@
-﻿<Window x:Class="Tres_Commas.Login.Login"
+﻿<Window x:Class="Tres_Commas.Login.Signup"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tres_Commas.Login"
         mc:Ignorable="d"
-        Title="Tres Commas" Height="450" Width="800" FontFamily="Segoe UI Light" WindowStyle="ThreeDBorderWindow">
-
+        Title="Signup" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="C:/Users/SK-Deadshot/Source/Repos/Tres_Commas/Tres Commas/Tres Commas/Login/img/i1.jpg" Stretch="UniformToFill" />
@@ -18,12 +17,12 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="8*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Border Grid.Column="1" Grid.Row="1" Background="White" CornerRadius="20" Opacity="0.9">
             <StackPanel Margin="20">
-                <Label Content="Login" FontSize="30" Margin="20 15"/>
+                <Label Content="Register" FontSize="30" Margin="20 0"/>
                 <Grid Margin="50 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -33,15 +32,24 @@
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Username:" Grid.Row="0"  Grid.Column="0" />
-                    <Label Content="Password:" Grid.Row="1" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Name="txtUsername"/>
-                    <PasswordBox Grid.Column="1" Grid.Row="1" Margin="5" Name="txtPassword"/>
-                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="20">
+                    <Label Content="First Name:" Grid.Row="0"  Grid.Column="0" />
+                    <Label Content="Last Name:" Grid.Row="1" Grid.Column="0"/>
+                    <Label Content="Username:" Grid.Row="2"  Grid.Column="0" />
+                    <Label Content="Password:" Grid.Row="3" Grid.Column="0"/>
+                    <Label Content="Conform Password:" Grid.Row="4" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Name="txtFname"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Name="txtLname"/>
+                    <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Name="txtUsername"/>
+                    <PasswordBox Grid.Column="1" Grid.Row="3" Margin="5" Name="txtPassword"/>
+                    <PasswordBox Grid.Column="1" Grid.Row="4" Margin="5" Name="txtPasswordconf"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="20">
                         <Button Content="Submit" Margin="30 10" Padding="5" Click="btnSubmit"/>
                         <Button Content="Reset" Margin="0 10" Padding="5" Click="btnReset"/>
-                        <Button Content="Register" Margin="30 10" Padding="5" Click="btnRegister"/>
+                        <Button Content="Login" Margin="30 10" Padding="5" Click="btnLogin"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>

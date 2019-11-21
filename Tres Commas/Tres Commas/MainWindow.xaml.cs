@@ -24,5 +24,7 @@ namespace Tres_Commas
         {
             InitializeComponent();
         }
+
+        public object TextBlockName { get; internal set; }
     }
 }
