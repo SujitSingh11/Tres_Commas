@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tres_Commas"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Tres Commas" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <SolidColorBrush Color="White"/>
+    </Window.Background>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0" Content="My Profile" FontSize="20" Click="BtnMyProfile"/>
+        <Button Grid.Column="0" Grid.Row="1" Content="Transaction" FontSize="20" Click="BtnTransaction"/>
+        <Button Grid.Column="0" Grid.Row="2" Content="Budget" FontSize="20" Click="BtnBudget"/>
+        <Button Grid.Column="0" Grid.Row="3" Content="Report" FontSize="20" Click="BtnReport"/>
+        <Button Grid.Column="0" Grid.Row="4" Content="Logout" FontSize="20" Click="BtnLogout" />
+
+        <TextBlock Grid.Column="1" 
+                   Grid.Row="0" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="25"
+                   Name="txtWelcome">
+        </TextBlock>
+
+        <Frame x:Name="Main" 
+               Grid.Column="1"
+               Grid.Row="0"
+               Grid.RowSpan="5"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

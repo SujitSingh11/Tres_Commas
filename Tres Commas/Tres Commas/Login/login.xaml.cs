@@ -26,7 +26,6 @@ namespace Tres_Commas.Login
             {
                 string username = txtUsername.Text;
                 string password = txtPassword.Password;
-                MainWindow main = new MainWindow();
                 SqlConnection con = new SqlConnection("Data Source=SUJIT_PC;Initial Catalog=tres_comma;Integrated Security=True");
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE username='" + username + "'  AND password='" + password + "'", con)
@@ -41,8 +40,10 @@ namespace Tres_Commas.Login
                 adapter.Fill(dataSet);
                 if (dataSet.Tables[0].Rows.Count > 0)
                 {
-                    string user = dataSet.Tables[0].Rows[0]["f_name"].ToString() + " " + dataSet.Tables[0].Rows[0]["l_name"].ToString();
+                    string id = dataSet.Tables[0].Rows[0]["user_id"].ToString();
+                    int user_id = int.Parse(id);
                     //Sending value from one form to another form.
+                    MainWindow main = new MainWindow(user_id);
                     main.Show();
                     Close();
                 }
