@@ -5,11 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tres_Commas.Login"
         mc:Ignorable="d"
-        Title="Signup" Height="450" Width="800">
+        Title="Signup" Height="450" Width="800" Background="#424242" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="C:/Users/SK-Deadshot/Source/Repos/Tres_Commas/Tres Commas/Tres Commas/Login/img/i1.jpg" Stretch="UniformToFill" />
-        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="6*"/>
@@ -17,13 +14,14 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="10*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Border Grid.Column="1" Grid.Row="1" Background="White" CornerRadius="20" Opacity="0.9">
-            <StackPanel Margin="20">
+        <Border Grid.Column="1" Grid.Row="1" Background="#e0e0e0" CornerRadius="20">
+            <StackPanel Margin="10">
                 <Label Content="Register" FontSize="30" Margin="20 0"/>
-                <Grid Margin="50 20">
+                <TextBlock Name="errormessage" HorizontalAlignment="Center" Foreground="Red" />
+                <Grid Margin="20 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
@@ -46,10 +44,10 @@
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Name="txtUsername"/>
                     <PasswordBox Grid.Column="1" Grid.Row="3" Margin="5" Name="txtPassword"/>
                     <PasswordBox Grid.Column="1" Grid.Row="4" Margin="5" Name="txtPasswordconf"/>
-                    <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="20">
-                        <Button Content="Submit" Margin="30 10" Padding="5" Click="btnSubmit"/>
-                        <Button Content="Reset" Margin="0 10" Padding="5" Click="btnReset"/>
-                        <Button Content="Login" Margin="30 10" Padding="5" Click="btnLogin"/>
+                    <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Margin="10">
+                        <Button Content="Submit" Margin="30 10" Padding="5" Click="btnSubmit" Width="100"/>
+                        <Button Content="Reset" Margin="0 10" Padding="5" Click="btnReset" Width="100"/>
+                        <Button Content="Login" Margin="30 10" Padding="5" Click="btnLogin" Width="100"/>
                     </StackPanel>
                 </Grid>
             </StackPanel>

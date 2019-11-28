@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MaterialDesignColors;
+using MaterialDesignThemes.Wpf;
+using System.Windows.Media;
 
 namespace Tres_Commas
 {
@@ -23,6 +26,8 @@ namespace Tres_Commas
         public MyProfile()
         {
             InitializeComponent();
+            IBaseTheme baseTheme = Theme.Light;
+
         }
     }
 }

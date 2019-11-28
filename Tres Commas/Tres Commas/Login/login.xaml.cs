@@ -1,7 +1,9 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 using System.Windows;
-
+using MaterialDesignColors;
+using MaterialDesignThemes.Wpf;
+using System.Windows.Media;
 
 namespace Tres_Commas.Login
 {
@@ -13,13 +15,20 @@ namespace Tres_Commas.Login
         public Login()
         {
             InitializeComponent();
+            IBaseTheme baseTheme = Theme.Light;
+
         }
 
         private void btnSubmit(object sender, RoutedEventArgs e)
         {
             if (txtUsername.Text.Length == 0)
             {
-                //errormessage.Text = "Enter an email.";
+                errormessage.Text = "Please enter Username";
+                txtUsername.Focus();
+            }
+            else if( txtPassword.Password.Length == 0)
+            {
+                errormessage.Text = "Please enter Password";
                 txtUsername.Focus();
             }
             else
@@ -49,7 +58,7 @@ namespace Tres_Commas.Login
                 }
                 else
                 {
-                    //errormessage.Text = "Sorry! Please enter existing emailid/password.";
+                    errormessage.Text = "User not found";
                 }
                 con.Close();
             }
@@ -59,6 +68,7 @@ namespace Tres_Commas.Login
         {
             txtUsername.Text = "";
             txtPassword.Password = "";
+            errormessage.Text = "";
         }
 
         private void btnRegister(object sender, RoutedEventArgs e)
