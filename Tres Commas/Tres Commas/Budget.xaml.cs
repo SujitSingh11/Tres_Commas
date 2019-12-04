@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,26 @@ namespace Tres_Commas
         public Budget()
         {
             InitializeComponent();
+        }
+
+        private void btnSearch(object sender, RoutedEventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=SUJIT_PC;Initial Catalog=tres_comma;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM budget WHERE ", con)
+            {
+                CommandType = CommandType.Text
+            };
+            SqlDataAdapter adapter = new SqlDataAdapter
+            {
+                SelectCommand = cmd
+            };
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            if (dataSet.Tables[0].Rows.Count > 0)
+            {
+                
+            }
         }
     }
 }

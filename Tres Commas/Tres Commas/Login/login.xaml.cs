@@ -58,7 +58,24 @@ namespace Tres_Commas.Login
                 }
                 else
                 {
-                    errormessage.Text = "User not found";
+                    SqlCommand cmd2 = new SqlCommand("SELECT * FROM users WHERE username='" + username + "'", con)
+                    {
+                        CommandType = CommandType.Text
+                    };
+                    SqlDataAdapter adapter2 = new SqlDataAdapter
+                    {
+                        SelectCommand = cmd2
+                    };
+                    DataSet dataSet2 = new DataSet();
+                    adapter2.Fill(dataSet2);
+                    if (dataSet2.Tables[0].Rows.Count > 0)
+                    {
+                        errormessage.Text = "Incorrect Password";
+                    }
+                    else
+                    {
+                        errormessage.Text = "No user registered with the given username";
+                    }
                 }
                 con.Close();
             }

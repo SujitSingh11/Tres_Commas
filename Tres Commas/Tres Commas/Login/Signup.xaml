@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tres_Commas.Login"
         mc:Ignorable="d"
-        Title="Signup" Height="450" Width="800" Background="#424242" WindowStartupLocation="CenterScreen">
+        Title="Signup" Height="500" Width="800" Background="#424242" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -21,6 +21,7 @@
             <StackPanel Margin="10">
                 <Label Content="Register" FontSize="30" Margin="20 0"/>
                 <TextBlock Name="errormessage" HorizontalAlignment="Center" Foreground="Red" />
+                <TextBlock Name="successmessage" HorizontalAlignment="Center" Foreground="Green" />
                 <Grid Margin="20 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -38,9 +39,9 @@
                     <Label Content="Last Name:" Grid.Row="1" Grid.Column="0"/>
                     <Label Content="Username:" Grid.Row="2"  Grid.Column="0" />
                     <Label Content="Password:" Grid.Row="3" Grid.Column="0"/>
-                    <Label Content="Conform Password:" Grid.Row="4" Grid.Column="0"/>
-                    <TextBox Grid.Column="1" Grid.Row="0" Margin="5" Name="txtFname"/>
-                    <TextBox Grid.Column="1" Grid.Row="1" Margin="5" Name="txtLname"/>
+                    <Label Content="Confirm Password:" Grid.Row="4" Grid.Column="0"/>
+                    <TextBox Grid.Column="1" Grid.Row="0" Margin="5" PreviewTextInput="CharValidate" Name="txtFname"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" Margin="5" PreviewTextInput="CharValidate" Name="txtLname"/>
                     <TextBox Grid.Column="1" Grid.Row="2" Margin="5" Name="txtUsername"/>
                     <PasswordBox Grid.Column="1" Grid.Row="3" Margin="5" Name="txtPassword"/>
                     <PasswordBox Grid.Column="1" Grid.Row="4" Margin="5" Name="txtPasswordconf"/>

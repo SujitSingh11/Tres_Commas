@@ -23,6 +23,15 @@ namespace Tres_Commas
     /// </summary>
     public partial class MainWindow : Window
     {
+        
+        public static class Users
+        {
+            public static int userId;
+            public static string fname;
+            public static string lname;
+            public static string name;
+            public static string username;
+        }
         public MainWindow(int user_id)
         {
             InitializeComponent();
@@ -43,8 +52,12 @@ namespace Tres_Commas
             {
                 string name = dataSet.Tables[0].Rows[0]["f_name"].ToString() + " " + dataSet.Tables[0].Rows[0]["l_name"].ToString();
                 string username = dataSet.Tables[0].Rows[0]["username"].ToString();
-                Users loggedUser = new Users(user_id,name,username);
-                string welcome = @"Welcome "+loggedUser.name+" to your personal Expense Tracker";
+                Users.userId = user_id;
+                Users.name = name;
+                Users.username = username;
+                Users.fname = dataSet.Tables[0].Rows[0]["f_name"].ToString();
+                Users.lname = dataSet.Tables[0].Rows[0]["l_name"].ToString();
+                string welcome = @"Welcome "+Users.name+" to your personal Expense Tracker";
                 txtWelcome.Text = welcome;
             }
             else
@@ -85,17 +98,5 @@ namespace Tres_Commas
         }
     }
 
-    public class Users
-    {
-        public int userId;
-        public string name;
-        public string username;
-        public Users(int id, string Name, string uname)
-        {
-            this.userId = id;
-            this.name = Name;
-            this.username = uname;
-        }
-
-    }
+    
 }

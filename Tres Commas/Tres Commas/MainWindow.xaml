@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tres_Commas"
-        
         mc:Ignorable="d"
         Title="Tres Commas" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Background>
@@ -27,15 +26,13 @@
         <Button Grid.Column="0" Grid.Row="2" Content="Budget" FontSize="20" Click="BtnBudget" Height="115"/>
         <Button Grid.Column="0" Grid.Row="3" Content="Report" FontSize="20" Click="BtnReport" Height="115"/>
         <Button Grid.Column="0" Grid.Row="4" Content="Logout" FontSize="20" Click="BtnLogout" Height="115"/>
-
         <TextBlock Grid.Column="1" 
-                   Grid.Row="0" 
+                   Grid.Row="1" 
                    HorizontalAlignment="Center" 
                    VerticalAlignment="Center" 
                    FontSize="25"
                    Name="txtWelcome">
         </TextBlock>
-
         <Frame x:Name="Main" 
                Grid.Column="1"
                Grid.Row="0"

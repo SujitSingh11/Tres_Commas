@@ -12,9 +12,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="0.7*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -23,6 +24,7 @@
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="My Profile" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="errormessage" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="15"/>
         <TextBlock Grid.Row="1" Text="First Name: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
         <TextBox FontSize="15" Name="txtFirstName" Grid.Row="1" Grid.Column="1" Margin="15"/>
         <TextBlock Grid.Row="2" Text="Last Name: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
@@ -30,12 +32,12 @@
         <TextBlock Grid.Row="3" Text="Username: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
         <TextBox FontSize="15" Name="txtUsername" Grid.Row="3" Grid.Column="1" Margin="15"/>
         <TextBlock Grid.Row="4" Text="Old Password: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
-        <TextBox FontSize="15" Name="txtOldPass" Grid.Row="4" Grid.Column="1" Margin="15"/>
+        <PasswordBox FontSize="15" Name="txtOldPass" Grid.Row="4" Grid.Column="1" Margin="15"/>
         <TextBlock Grid.Row="5" Text="New Password: " VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="15" />
-        <TextBox FontSize="15" Name="txtNewPass" Grid.Row="5" Grid.Column="1" Margin="15"/>
+        <PasswordBox FontSize="15" Name="txtNewPass" Grid.Row="5" Grid.Column="1" Margin="15"/>
         <StackPanel Orientation="Horizontal" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="10" HorizontalAlignment="Center">
-            <Button Content="Change Password" Margin="20 0"/>
-            <Button Content="Reset" Margin="20 0" Width="100"/>
+            <Button Content="Update" Margin="20 0"  Width="100" Click="btnUpdate"/>
+            <Button Content="Reset" Margin="20 0" Width="100" Click="btnReset"/>
         </StackPanel>
     </Grid>
 </Page>
